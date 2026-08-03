@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071321">
-  <meta name="description" content="البوابة الرسمية للتقديم على إدارة محافظة الرس.">
-  <title>التقديم على إدارة محافظة الرس</title>
+  <meta name="description" content="نظام التقديم الذكي على إدارة محافظة الرس.">
+  <title>نظام التقديم الذكي | إدارة محافظة الرس</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260803-1">
+  <link rel="stylesheet" href="css/styles.css?v=20260803-2">
   <script src="js/config.js?v=20260803-1" defer></script>
-  <script src="js/application.js?v=20260803-1" defer></script>
+  <script src="js/landing.js?v=20260803-2" defer></script>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">انتقل إلى نموذج التقديم</a>
+<body class="landing-page">
+  <a class="skip-link" href="#main-content">انتقل إلى المحتوى الرئيسي</a>
   <div class="page-glow page-glow--one" aria-hidden="true"></div>
   <div class="page-glow page-glow--two" aria-hidden="true"></div>
 
@@ -24,76 +24,60 @@
         <span class="brand__mark" aria-hidden="true">
           <svg viewBox="0 0 48 48"><path d="M24 4 40 10v12c0 11-6.8 19-16 23-9.2-4-16-12-16-23V10l16-6Z" fill="currentColor" opacity=".15"/><path d="M24 7.5 36.5 12v10c0 8.5-4.9 15.2-12.5 19-7.6-3.8-12.5-10.5-12.5-19V12L24 7.5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m17.5 24 4.2 4.2 9-10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
         </span>
-        <span><strong>بوابة إدارة محافظة الرس</strong><small>نظام التقديم الإداري</small></span>
+        <span><strong>إدارة محافظة الرس</strong><small>نظام التقديم الذكي</small></span>
       </a>
-      <span class="manager-chip">مسؤول الإدارة: <strong id="application-manager-name">خيرو بن طيب</strong></span>
+      <nav class="main-nav" aria-label="التنقل الرئيسي">
+        <a class="is-active" href="index.html">الرئيسية</a>
+        <a href="about.html">معلومات عنا</a>
+      </nav>
     </div>
   </header>
 
-  <main id="main-content" class="page-shell">
-    <section class="hero" aria-labelledby="page-title">
-      <div>
-        <span class="eyebrow">بوابة التقديم الرسمية</span>
-        <h1 id="page-title">انضم إلى فريق<br><span>الدعم والمساعدة</span></h1>
-        <p>أدخل بياناتك بعناية وأجب عن جميع الأسئلة بوضوح. تُرسل الطلبات مباشرة إلى إدارة محافظة الرس للمراجعة.</p>
+  <main id="main-content" class="landing-shell">
+    <section class="welcome-hero" aria-labelledby="welcome-title">
+      <div class="welcome-hero__content">
+        <span class="eyebrow">البوابة الرسمية • محافظة الرس</span>
+        <h1 id="welcome-title">أهلًا بك في نظام التقديم الذكي على <span>إدارة محافظة الرس</span></h1>
+        <p>منصة موحدة لاستقبال طلبات الانضمام إلى فريق الدعم والمساعدة، ومراجعتها بطريقة منظمة وواضحة تضمن سهولة التقديم وحفظ البيانات.</p>
+
+        <div class="manager-line">
+          <span>مسؤول الإدارة</span>
+          <strong id="landing-manager-name">خيرو بن طيب</strong>
+        </div>
+
+        <div class="hero-actions">
+          <a id="apply-now-button" class="primary-button action-link is-disabled" href="application.html" aria-disabled="true">جاري التحقق من حالة التقديم...</a>
+          <a class="secondary-button" href="about.html">معلومات عنا</a>
+        </div>
+        <p id="landing-status-note" class="landing-status-note" role="status" aria-live="polite">يتم الآن التحقق من حالة التقديم.</p>
       </div>
-      <aside id="application-status-card" class="status-card is-checking" aria-live="polite" aria-busy="true">
-        <span class="status-card__icon" aria-hidden="true">✓</span>
-        <div><small>حالة البوابة</small><strong id="application-status-title">جاري التحقق...</strong><p id="application-status-note">يرجى الانتظار حتى يتم التحقق من حالة التقديم.</p></div>
+
+      <aside class="welcome-visual" aria-label="معلومات التقديم">
+        <div class="visual-shield" aria-hidden="true">
+          <svg viewBox="0 0 120 120"><path d="M60 9 101 24v30c0 28-16.7 48.8-41 59C35.7 102.8 19 82 19 54V24L60 9Z" fill="currentColor" opacity=".13"/><path d="M60 16 94 28v26c0 23.2-13.2 41-34 50.5C39.2 95 26 77.2 26 54V28l34-12Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="m43 59 11 11 24-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/></svg>
+        </div>
+        <div class="visual-points">
+          <div><span>01</span><p><strong>نموذج واضح</strong>أسئلة مرتبة وسهلة التعبئة</p></div>
+          <div><span>02</span><p><strong>إرسال آمن</strong>يصل الطلب مباشرة إلى الإدارة</p></div>
+          <div><span>03</span><p><strong>مراجعة منظمة</strong>رقم مستقل لكل طلب مقدم</p></div>
+        </div>
       </aside>
     </section>
 
-    <section class="requirements" aria-label="شروط التقديم">
-      <div><span>01</span><p><strong>العمر</strong>أكثر من 20 عامًا</p></div>
-      <div><span>02</span><p><strong>السجل الرقابي</strong>خالي من الباندات</p></div>
-      <div><span>03</span><p><strong>السرية</strong>التعهد بعدم التسريب</p></div>
-    </section>
-
-    <section id="application-closed-panel" class="closed-panel" hidden>
-      <span aria-hidden="true">!</span>
-      <div><strong id="application-closed-title">التقديم مغلق حاليًا</strong><p id="application-closed-message">راجع إعلانات فتح التقديم عبر الديسكورد.</p></div>
-    </section>
-
-    <form id="administration-application-form" class="application-form" novalidate hidden>
-      <section class="form-section">
-        <header class="section-heading"><span>1</span><div><h2>البيانات الأساسية</h2><p>اكتب بياناتك كما تظهر داخل السيرفر والديسكورد.</p></div></header>
-        <div class="form-grid">
-          <label><span>الاسم داخل الديسكورد</span><input name="fullName" type="text" maxlength="80" autocomplete="name" placeholder="مجاهد ال عباد" required></label>
-          <label><span>معرف Discord</span><input id="application-discord-id" name="discordId" type="text" maxlength="20" inputmode="numeric" dir="ltr" autocomplete="off" placeholder="829030001466671154" required></label>
-          <label><span>1. الاسم داخل السيرفر</span><input name="serverName" type="text" maxlength="80" required></label>
-          <label><span>2. كم عمرك الحقيقي؟</span><input id="application-age" name="age" type="number" min="21" max="100" inputmode="numeric" required><small>عدم الإفصاح عن العمر الحقيقي يؤدي إلى رفض الطلب.</small></label>
-        </div>
-        <label><span>هل أنت مستعد لحلف اليمين بعدم تسريب أي معلومات تخص الإدارة أو أسئلة التقديم؟</span><select name="confidentialityPledge" required><option value="">اختر الإجابة</option><option value="نعم، أتعهد بعدم التسريب">نعم، أتعهد بعدم التسريب</option><option value="لا">لا</option></select></label>
-      </section>
-
-      <section class="form-section">
-        <header class="section-heading"><span>2</span><div><h2>أسئلة التقديم</h2><p>الإجابات الواقعية والمفصلة تساعد الإدارة في مراجعة طلبك.</p></div></header>
-        <div class="questions">
-          <label><span>3. هل لديك خبرات إدارية أو في مجال الدعم والمساعدة؟ اذكرها بالتفصيل.</span><textarea name="experience" rows="5" maxlength="1500" required></textarea></label>
-          <label><span>4. كم عدد ساعات تواجدك يوميًا؟</span><textarea name="dailyHours" rows="3" maxlength="500" required></textarea></label>
-          <label><span>5. لماذا ترغب بالانضمام إلى فريق الدعم والمساعدة؟</span><textarea name="joinReason" rows="4" maxlength="1000" required></textarea></label>
-          <label><span>6. كيف تتعامل مع شخص غاضب أو غير متعاون؟</span><textarea name="angryPersonResponse" rows="4" maxlength="1000" required></textarea></label>
-          <label><span>7. ماذا ستفعل إذا طلب منك أحد اللاعبين معلومات سرية تخص الإدارة؟</span><textarea name="secretInfoResponse" rows="4" maxlength="1000" required></textarea></label>
-          <label><span>8. كيف تتصرف إذا واجهت مشكلة لا تعرف حلها؟</span><textarea name="unknownProblemResponse" rows="4" maxlength="1000" required></textarea></label>
-          <label><span>9. هل سبق وأن تعرضت لعقوبة إدارية؟ إذا نعم، اذكر السبب.</span><textarea name="previousPunishments" rows="4" maxlength="1000" required></textarea></label>
-          <label><span>10. هل تستطيع العمل ضمن فريق والالتزام بتعليمات الإدارة؟</span><select name="teamworkCommitment" required><option value="">اختر الإجابة</option><option value="نعم، أستطيع العمل ضمن فريق والالتزام">نعم</option><option value="لا">لا</option></select></label>
-          <label><span>11. كيف تتعامل مع الضغط وكثرة البلاغات؟</span><textarea name="pressureResponse" rows="4" maxlength="1000" required></textarea></label>
-          <label><span>12. هل توافق على الالتزام بجميع قوانين الإدارة، وفي حال مخالفتها تتحمل كامل المسؤولية؟</span><select name="rulesAgreement" required><option value="">اختر الإجابة</option><option value="نعم، أوافق وأتحمل كامل المسؤولية">نعم، أوافق</option><option value="لا">لا</option></select></label>
-        </div>
-      </section>
-
-      <section class="submit-section">
-        <label class="declaration"><input name="noBansDeclaration" type="checkbox" value="أقر بعدم وجود سجلات رقابية أو باندات" required><span>أقر بأن جميع بياناتي صحيحة، وأنه لا توجد لدي سجلات رقابية أو باندات.</span></label>
-        <div id="application-form-status" class="form-status" role="status" aria-live="polite" hidden></div>
-        <button id="application-submit-button" class="primary-button" type="submit">إرسال طلب التقديم</button>
-      </section>
-    </form>
-
-    <section id="application-success-panel" class="success-panel" hidden>
-      <span aria-hidden="true">✓</span><h2>تم إرسال طلبك</h2><p>احتفظ برقم الطلب التالي لحين مراجعة الإدارة:</p><strong id="application-receipt" dir="ltr"></strong>
+    <section class="home-info" aria-labelledby="before-title">
+      <div class="section-label">قبل أن تبدأ</div>
+      <h2 id="before-title">تأكد من استيفاء شروط التقديم</h2>
+      <div class="home-info__grid">
+        <article><span>20+</span><h3>العمر الحقيقي</h3><p>يشترط أن يكون عمر المتقدم أكثر من عشرين عامًا.</p></article>
+        <article><span>✓</span><h3>السجل الرقابي</h3><p>يجب ألا توجد لدى المتقدم سجلات رقابية أو باندات.</p></article>
+        <article><span>●</span><h3>السرية والالتزام</h3><p>التعهد بعدم تسريب معلومات الإدارة أو أسئلة التقديم.</p></article>
+      </div>
     </section>
   </main>
 
-  <footer><p>بوابة التقديم على إدارة محافظة الرس</p><small>جميع الطلبات تخضع للمراجعة ولا يعني إرسال الطلب القبول.</small></footer>
+  <footer class="site-footer">
+    <div><strong>إدارة محافظة الرس</strong><span>جميع الحقوق محفوظة © 2026 — محافظة الرس</span></div>
+    <a href="about.html">معلومات عنا</a>
+  </footer>
 </body>
 </html>
