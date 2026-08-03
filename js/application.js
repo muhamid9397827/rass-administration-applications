@@ -10,7 +10,6 @@
   let state = { isOpen: false, isVerified: false, status: "checking", managerName: config.managerName, closedMessage: config.closedMessage };
 
   function boot() {
-    injectCompactSubmitStyles();
     ["application-manager-name", "application-status-card", "application-status-title", "application-status-note", "application-closed-panel", "application-closed-title", "application-closed-message", "administration-application-form", "application-age", "application-discord-id", "application-form-status", "application-submit-button", "application-success-panel", "application-receipt"].forEach((id) => {
       elements[toCamelCase(id)] = document.getElementById(id);
     });
@@ -23,24 +22,6 @@
     restoreReceipt();
     refreshStatus();
     window.setInterval(refreshStatus, STATUS_REFRESH_INTERVAL_MS);
-  }
-
-  function injectCompactSubmitStyles() {
-    const style = document.createElement("style");
-    style.textContent = `
-      .submit-section{padding:20px 24px;border-radius:16px}
-      .declaration{margin-bottom:14px;gap:9px;font-size:.86rem;line-height:1.55}
-      .declaration input{flex-basis:18px;width:18px;min-height:18px;margin-top:2px}
-      .primary-button{min-width:min(100%,300px);min-height:48px;padding:0 22px;border-radius:12px;font-size:.94rem}
-      .site-footer{padding-top:20px;padding-bottom:26px;margin-top:28px}
-      @media(max-width:820px){
-        .submit-section{padding:16px 14px}
-        .declaration{font-size:.8rem;text-align:start}
-        .primary-button{min-height:46px;width:100%}
-        .site-footer{margin-top:20px}
-      }
-    `;
-    document.head.appendChild(style);
   }
 
   function toCamelCase(value) { return value.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase()); }
