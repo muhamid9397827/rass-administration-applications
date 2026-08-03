@@ -10,72 +10,92 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=20260803-2">
+  <style>
+    .landing-page{background:radial-gradient(circle at 85% 10%,rgba(47,109,246,.13),transparent 32%),radial-gradient(circle at 10% 80%,rgba(255,189,36,.08),transparent 28%),#071321}
+    .portal-header{position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(159,176,195,.15);background:rgba(7,19,33,.88);backdrop-filter:blur(16px)}
+    .portal-header__inner{width:min(1200px,calc(100% - 32px));min-height:76px;margin:auto;display:flex;align-items:center;gap:20px}
+    .portal-brand{display:flex;align-items:center;gap:12px;color:#f4f7fb;text-decoration:none}
+    .portal-brand__mark{display:grid;place-items:center;width:48px;height:48px;border:1px solid rgba(255,189,36,.35);border-radius:15px;color:#ffbd24;background:rgba(255,189,36,.07)}
+    .portal-brand__mark svg{width:34px}.portal-brand strong,.portal-brand small{display:block}.portal-brand strong{font-size:.98rem}.portal-brand small{color:#9fb0c3;font-size:.72rem}
+    .portal-nav{display:flex;align-items:center;gap:8px;margin-inline-start:auto}.portal-nav a{padding:9px 14px;border-radius:10px;color:#b9c7d5;text-decoration:none;font-size:.82rem;font-weight:700}.portal-nav a:hover{background:rgba(47,109,246,.12);color:#fff}
+    .portal-status{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(159,176,195,.18);border-radius:999px;color:#b9c7d5;font-size:.76rem}.portal-status i{width:8px;height:8px;border-radius:50%;background:#ffbd24;box-shadow:0 0 0 5px rgba(255,189,36,.08)}
+    .portal-main{position:relative;z-index:1;width:min(1200px,calc(100% - 32px));margin:42px auto 72px}
+    .portal-hero{padding:clamp(30px,5vw,58px);border:1px solid #223b56;border-radius:28px;background:linear-gradient(135deg,rgba(17,38,62,.96),rgba(8,24,41,.92));box-shadow:0 28px 75px rgba(0,0,0,.22);text-align:center}
+    .portal-eyebrow{display:inline-flex;align-items:center;gap:9px;color:#ffbd24;font-size:.8rem;font-weight:800}.portal-eyebrow:before,.portal-eyebrow:after{content:"";width:22px;height:1px;background:#ffbd24}
+    .portal-hero h1{max-width:820px;margin:15px auto 13px;font-size:clamp(2rem,5vw,3.8rem);line-height:1.2;letter-spacing:-.04em}.portal-hero h1 span{color:#ffbd24}
+    .portal-lead{max-width:720px;margin:0 auto;color:#b9c7d5;font-size:clamp(.9rem,1.6vw,1.04rem)}
+    .portal-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:27px}.portal-actions a{display:inline-flex;align-items:center;justify-content:center;min-width:205px;min-height:54px;padding:0 24px;border-radius:13px;text-decoration:none;font-weight:900}.portal-actions .primary{background:#2f6df6;color:#fff;box-shadow:0 12px 28px rgba(47,109,246,.24)}.portal-actions .primary.is-disabled{background:#354557;color:#9baabd;box-shadow:none;cursor:not-allowed}.portal-actions .secondary{border:1px solid #2b4663;background:rgba(7,19,33,.42);color:#f4f7fb}
+    .portal-note{margin:11px 0 0;color:#25d5a0;font-size:.76rem}.portal-note.is-error{color:#ff6b70}
+    .portal-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;max-width:860px;margin:31px auto 0}.portal-metric{padding:16px;border:1px solid rgba(159,176,195,.14);border-radius:15px;background:rgba(7,19,33,.42)}.portal-metric strong{display:block;color:#f4f7fb;font-size:.94rem}.portal-metric span{color:#9fb0c3;font-size:.72rem}
+    .portal-section{margin-top:24px;padding:28px;border:1px solid #223b56;border-radius:23px;background:rgba(13,29,48,.86)}
+    .portal-section__head{text-align:center;margin-bottom:21px}.portal-section__head small{color:#ffbd24;font-weight:800}.portal-section__head h2{margin:5px 0 0;font-size:clamp(1.35rem,3vw,2rem)}
+    .steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step-card{position:relative;padding:22px 18px;border:1px solid rgba(159,176,195,.14);border-radius:16px;background:#0a192a;text-align:center}.step-card b{display:grid;place-items:center;width:37px;height:37px;margin:0 auto 10px;border-radius:11px;background:rgba(47,109,246,.15);color:#8bb9ff}.step-card strong{display:block}.step-card p{margin:5px 0 0;color:#9fb0c3;font-size:.76rem}
+    .before-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.before-card{padding:19px;border:1px solid rgba(159,176,195,.14);border-radius:15px;background:#0a192a}.before-card span{display:grid;place-items:center;width:37px;height:37px;margin-bottom:11px;border-radius:11px;background:rgba(255,189,36,.1);color:#ffbd24;font-weight:900}.before-card h3{margin:0;font-size:.92rem}.before-card p{margin:5px 0 0;color:#9fb0c3;font-size:.73rem}
+    .portal-manager{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:24px;padding:20px 24px;border:1px solid rgba(37,213,160,.22);border-radius:17px;background:rgba(37,213,160,.055)}.portal-manager small{display:block;color:#9fb0c3}.portal-manager strong{color:#25d5a0}.portal-manager p{margin:0;color:#9fb0c3;font-size:.76rem}
+    .portal-footer{width:min(1200px,calc(100% - 32px));margin:auto;padding:27px 0 38px;border-top:1px solid rgba(159,176,195,.14);display:flex;justify-content:space-between;gap:20px;color:#9fb0c3;font-size:.78rem}.portal-footer strong{display:block;color:#f4f7fb}.portal-footer a{color:#8bb9ff;text-decoration:none}
+    @media(max-width:800px){.portal-header__inner{min-height:68px}.portal-nav{display:none}.portal-status{margin-inline-start:auto}.portal-main{margin-top:24px}.portal-hero{padding:30px 20px}.portal-metrics,.steps-row{grid-template-columns:1fr}.before-grid{grid-template-columns:repeat(2,1fr)}.portal-section{padding:22px 16px}.portal-manager,.portal-footer{align-items:flex-start;flex-direction:column}.portal-actions a{width:100%}}
+    @media(max-width:480px){.portal-brand small{display:none}.portal-status span{display:none}.before-grid{grid-template-columns:1fr}.portal-hero h1{font-size:2rem}}
+  </style>
   <script src="js/config.js?v=20260803-1" defer></script>
   <script src="js/landing.js?v=20260803-2" defer></script>
 </head>
 <body class="landing-page">
   <a class="skip-link" href="#main-content">انتقل إلى المحتوى الرئيسي</a>
-  <div class="page-glow page-glow--one" aria-hidden="true"></div>
-  <div class="page-glow page-glow--two" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="brand" href="index.html" aria-label="الصفحة الرئيسية">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><path d="M24 4 40 10v12c0 11-6.8 19-16 23-9.2-4-16-12-16-23V10l16-6Z" fill="currentColor" opacity=".15"/><path d="M24 7.5 36.5 12v10c0 8.5-4.9 15.2-12.5 19-7.6-3.8-12.5-10.5-12.5-19V12L24 7.5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m17.5 24 4.2 4.2 9-10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
-        </span>
+  <header class="portal-header">
+    <div class="portal-header__inner">
+      <a class="portal-brand" href="index.html" aria-label="الصفحة الرئيسية">
+        <span class="portal-brand__mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 4 40 10v12c0 11-6.8 19-16 23-9.2-4-16-12-16-23V10l16-6Z" fill="currentColor" opacity=".15"/><path d="M24 7.5 36.5 12v10c0 8.5-4.9 15.2-12.5 19-7.6-3.8-12.5-10.5-12.5-19V12L24 7.5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m17.5 24 4.2 4.2 9-10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg></span>
         <span><strong>إدارة محافظة الرس</strong><small>نظام التقديم الذكي</small></span>
       </a>
-      <nav class="main-nav" aria-label="التنقل الرئيسي">
-        <a class="is-active" href="index.html">الرئيسية</a>
-        <a href="about.html">معلومات عنا</a>
-      </nav>
+      <nav class="portal-nav" aria-label="التنقل الرئيسي"><a href="index.html">الرئيسية</a><a href="about.html">معلومات عنا</a></nav>
+      <div class="portal-status"><i aria-hidden="true"></i><span>حالة التقديم</span></div>
     </div>
   </header>
 
-  <main id="main-content" class="landing-shell">
-    <section class="welcome-hero" aria-labelledby="welcome-title">
-      <div class="welcome-hero__content">
-        <span class="eyebrow">البوابة الرسمية • محافظة الرس</span>
-        <h1 id="welcome-title">أهلًا بك في نظام التقديم الذكي على <span>إدارة محافظة الرس</span></h1>
-        <p>منصة موحدة لاستقبال طلبات الانضمام إلى فريق الدعم والمساعدة، ومراجعتها بطريقة منظمة وواضحة تضمن سهولة التقديم وحفظ البيانات.</p>
-
-        <div class="manager-line">
-          <span>مسؤول الإدارة</span>
-          <strong id="landing-manager-name">خيرو بن طيب</strong>
-        </div>
-
-        <div class="hero-actions">
-          <a id="apply-now-button" class="primary-button action-link is-disabled" href="application.html" aria-disabled="true">جاري التحقق من حالة التقديم...</a>
-          <a class="secondary-button" href="about.html">معلومات عنا</a>
-        </div>
-        <p id="landing-status-note" class="landing-status-note" role="status" aria-live="polite">يتم الآن التحقق من حالة التقديم.</p>
+  <main id="main-content" class="portal-main">
+    <section class="portal-hero" aria-labelledby="welcome-title">
+      <span class="portal-eyebrow">البوابة الرسمية لمحافظة الرس</span>
+      <h1 id="welcome-title">بوابة التقديم إلى <span>إدارة محافظة الرس</span></h1>
+      <p class="portal-lead">منصة موحدة وآمنة لاستقبال طلبات الانضمام ومتابعتها، بتجربة واضحة تحفظ بياناتك وتسهّل مراجعة طلبك.</p>
+      <div class="portal-actions">
+        <a id="apply-now-button" class="primary is-disabled" href="application.html" aria-disabled="true">جاري التحقق من حالة التقديم...</a>
+        <a class="secondary" href="about.html">معلومات عنا</a>
       </div>
-
-      <aside class="welcome-visual" aria-label="معلومات التقديم">
-        <div class="visual-shield" aria-hidden="true">
-          <svg viewBox="0 0 120 120"><path d="M60 9 101 24v30c0 28-16.7 48.8-41 59C35.7 102.8 19 82 19 54V24L60 9Z" fill="currentColor" opacity=".13"/><path d="M60 16 94 28v26c0 23.2-13.2 41-34 50.5C39.2 95 26 77.2 26 54V28l34-12Z" fill="none" stroke="currentColor" stroke-width="4"/><path d="m43 59 11 11 24-28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/></svg>
-        </div>
-        <div class="visual-points">
-          <div><span>01</span><p><strong>نموذج واضح</strong>أسئلة مرتبة وسهلة التعبئة</p></div>
-          <div><span>02</span><p><strong>إرسال آمن</strong>يصل الطلب مباشرة إلى الإدارة</p></div>
-          <div><span>03</span><p><strong>مراجعة منظمة</strong>رقم مستقل لكل طلب مقدم</p></div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="home-info" aria-labelledby="before-title">
-      <div class="section-label">قبل أن تبدأ</div>
-      <h2 id="before-title">تأكد من استيفاء شروط التقديم</h2>
-      <div class="home-info__grid">
-        <article><span>20+</span><h3>العمر الحقيقي</h3><p>يشترط أن يكون عمر المتقدم أكثر من عشرين عامًا.</p></article>
-        <article><span>✓</span><h3>السجل الرقابي</h3><p>يجب ألا توجد لدى المتقدم سجلات رقابية أو باندات.</p></article>
-        <article><span>●</span><h3>السرية والالتزام</h3><p>التعهد بعدم تسريب معلومات الإدارة أو أسئلة التقديم.</p></article>
+      <p id="landing-status-note" class="portal-note" role="status" aria-live="polite">يتم الآن التحقق من حالة التقديم.</p>
+      <div class="portal-metrics" aria-label="مزايا النظام">
+        <div class="portal-metric"><strong>نموذج واضح</strong><span>حقول مرتبة وسهلة التعبئة</span></div>
+        <div class="portal-metric"><strong>إرسال آمن</strong><span>يصل الطلب مباشرة إلى الإدارة</span></div>
+        <div class="portal-metric"><strong>رقم طلب مستقل</strong><span>يسهّل تنظيم المراجعة والمتابعة</span></div>
       </div>
     </section>
+
+    <section class="portal-section" aria-labelledby="steps-title">
+      <div class="portal-section__head"><small>رحلة الطلب</small><h2 id="steps-title">ثلاث خطوات بسيطة وواضحة</h2></div>
+      <div class="steps-row">
+        <article class="step-card"><b>1</b><strong>تعبئة البيانات</strong><p>أدخل معلوماتك وأجب عن أسئلة التقديم بدقة.</p></article>
+        <article class="step-card"><b>2</b><strong>مراجعة الطلب</strong><p>تراجع الإدارة الطلب وتتأكد من اكتمال البيانات.</p></article>
+        <article class="step-card"><b>3</b><strong>استلام النتيجة</strong><p>يتم التعامل مع الطلب وفق إجراءات الإدارة المعتمدة.</p></article>
+      </div>
+    </section>
+
+    <section class="portal-section" aria-labelledby="before-title">
+      <div class="portal-section__head"><small>قبل التقديم</small><h2 id="before-title">جهّز معلوماتك وتأكد من الشروط</h2></div>
+      <div class="before-grid">
+        <article class="before-card"><span>20+</span><h3>العمر الحقيقي</h3><p>يشترط أن يكون عمر المتقدم أكثر من عشرين عامًا.</p></article>
+        <article class="before-card"><span>✓</span><h3>السجل الرقابي</h3><p>يجب ألا توجد سجلات رقابية أو باندات على المتقدم.</p></article>
+        <article class="before-card"><span>#</span><h3>معرف Discord</h3><p>جهّز المعرف الصحيح وتأكد من عدم وجود أخطاء فيه.</p></article>
+        <article class="before-card"><span>!</span><h3>صحة البيانات</h3><p>راجع إجاباتك، ويمنع تكرار الطلب أو تسريب الأسئلة.</p></article>
+      </div>
+    </section>
+
+    <aside class="portal-manager" aria-label="إشراف الإدارة">
+      <div><small>إشراف الإدارة</small><strong id="landing-manager-name">خيرو بن طيب</strong></div>
+      <p>للاستفسارات الإدارية، التزم بالقنوات الرسمية المعتمدة.</p>
+    </aside>
   </main>
 
-  <footer class="site-footer">
+  <footer class="portal-footer">
     <div><strong>إدارة محافظة الرس</strong><span>جميع الحقوق محفوظة © 2026 — محافظة الرس</span></div>
     <a href="about.html">معلومات عنا</a>
   </footer>
