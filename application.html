@@ -3,134 +3,111 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#071321">
+  <meta name="theme-color" content="#061321">
   <meta name="description" content="البوابة الرسمية للتقديم على إدارة محافظة الرس.">
   <title>نموذج التقديم | إدارة محافظة الرس</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260803-4">
+  <link rel="stylesheet" href="css/styles.css?v=20260803-5">
   <style>
-    .page-shell{margin-top:30px}
-    .hero{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:28px 32px;border-radius:20px;background:linear-gradient(135deg,rgba(16,36,59,.95),rgba(8,24,40,.92))}
-    .hero>div{flex:1}.hero .eyebrow{font-size:.78rem}.hero h1{margin:8px 0 6px;max-width:none;font-size:clamp(1.9rem,4vw,3rem);line-height:1.25;letter-spacing:-.035em}.hero h1 span{display:inline}.hero>div>p{max-width:760px;font-size:.88rem}
-    .status-card{flex:0 0 300px;min-height:auto;padding:18px 20px;border-radius:16px;align-items:center}.status-card__icon{flex-basis:42px;height:42px;border-radius:12px}.status-card strong{font-size:1rem}.status-card p{font-size:.75rem}
-    .requirements{margin:14px 0 18px;border-radius:16px}.requirements>div{padding:14px 18px}.requirements>div>span{font-size:1rem}.requirements strong{font-size:.84rem}.requirements p{font-size:.7rem}
-    .application-steps{margin-bottom:18px;border-radius:15px;overflow:hidden}.application-steps span{padding:13px 10px;font-size:.78rem}.application-steps b{width:28px;height:28px}
-    .application-form{gap:18px}.form-section{padding:26px;border-radius:18px;background:linear-gradient(180deg,rgba(13,29,48,.97),rgba(10,25,42,.97));box-shadow:0 14px 34px rgba(0,0,0,.1)}.section-heading{margin-bottom:18px;padding-bottom:15px}
-    .questions{display:grid;grid-template-columns:1fr;gap:10px}.questions>label{display:flex;flex-direction:column;width:100%;padding:14px 16px;border:1px solid rgba(159,176,195,.12);border-radius:12px;background:rgba(7,19,33,.3);transition:border-color .2s,background .2s}.questions>label:hover{border-color:rgba(139,185,255,.22);background:rgba(10,28,48,.46)}.questions>label>span{margin-bottom:8px;font-size:.87rem;line-height:1.55;color:#edf3f9}.questions textarea,.questions select{width:100%;background:#10253d;border-color:#294866}.questions textarea{min-height:86px;padding:11px 13px;line-height:1.55}.questions select{min-height:48px}.questions textarea:focus,.questions select:focus{background:#122a46;border-color:#4b83f8}
-    .form-grid{gap:14px}.form-grid>label{padding:14px;border:1px solid rgba(159,176,195,.1);border-radius:13px;background:rgba(7,19,33,.25)}
-    .application-form>.form-section:first-of-type{padding:20px 24px}
-    .application-form>.form-section:first-of-type .section-heading{margin-bottom:14px;padding-bottom:12px}
-    .application-form>.form-section:first-of-type .section-heading>span{flex-basis:40px;height:40px;border-radius:12px}
-    .application-form>.form-section:first-of-type .section-heading h2{font-size:1.18rem}
-    .application-form>.form-section:first-of-type .section-heading p{font-size:.76rem}
-    .application-form>.form-section:first-of-type .form-grid{gap:10px 12px;margin-bottom:12px}
-    .application-form>.form-section:first-of-type .form-grid>label{padding:11px 12px;border-radius:11px}
-    .application-form>.form-section:first-of-type label>span{margin-bottom:6px;font-size:.82rem}
-    .application-form>.form-section:first-of-type input,.application-form>.form-section:first-of-type select{min-height:46px;border-radius:11px;padding-inline:13px}
-    .application-form>.form-section:first-of-type small{margin-top:5px;font-size:.67rem}
-    .application-form>.form-section:first-of-type>label{display:block;padding:11px 12px;border:1px solid rgba(159,176,195,.1);border-radius:11px;background:rgba(7,19,33,.22)}
-    @media(max-width:820px){.page-shell{margin-top:20px}.hero{display:grid;padding:22px 18px}.hero h1 span{display:block}.status-card{width:100%;flex-basis:auto}.requirements{grid-template-columns:1fr}.requirements>div+div{border-inline-start:0;border-top:1px solid var(--line)}.form-section{padding:20px 14px}.questions{gap:9px}.questions>label{padding:12px 13px}.questions textarea{min-height:80px}.application-form>.form-section:first-of-type{padding:16px 12px}.application-form>.form-section:first-of-type .form-grid{grid-template-columns:1fr;gap:9px}}
+    :root{--p-bg:#061321;--p-panel:#0b1d31;--p-panel-2:#102842;--p-line:#203b58;--p-text:#f4f7fb;--p-muted:#93a8bd;--p-blue:#3478f6;--p-blue-soft:#75a8ff;--p-gold:#e8b43e;--p-green:#2bd39e;--p-red:#ff6f74}
+    *{box-sizing:border-box}
+    body.application-redesign{margin:0;min-width:320px;background:radial-gradient(circle at 88% 6%,rgba(52,120,246,.12),transparent 27%),radial-gradient(circle at 8% 90%,rgba(232,180,62,.06),transparent 24%),var(--p-bg);color:var(--p-text);font-family:"Cairo",system-ui,sans-serif}
+    .portal-header{position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(147,168,189,.15);background:rgba(6,19,33,.92);backdrop-filter:blur(16px)}
+    .portal-header__inner{width:min(1220px,calc(100% - 32px));min-height:76px;margin:auto;display:flex;align-items:center;gap:24px}
+    .portal-brand{display:flex;align-items:center;gap:12px;color:inherit;text-decoration:none}.portal-logo{width:54px;height:54px;object-fit:contain;filter:drop-shadow(0 5px 14px rgba(0,0,0,.32))}.portal-brand strong,.portal-brand small{display:block}.portal-brand strong{font-size:1rem}.portal-brand small{color:var(--p-muted);font-size:.72rem}
+    .portal-nav{display:flex;align-items:center;gap:8px;margin-inline-start:auto}.portal-nav a{padding:9px 14px;border-radius:9px;color:#b7c5d3;text-decoration:none;font-size:.82rem;font-weight:800}.portal-nav a:hover,.portal-nav a.is-active{color:#fff;background:rgba(52,120,246,.14)}
+    .manager-chip{padding:8px 13px;border:1px solid rgba(147,168,189,.2);border-radius:999px;color:var(--p-muted);font-size:.75rem;white-space:nowrap}.manager-chip strong{color:var(--p-green)}
+    .portal-shell{width:min(1220px,calc(100% - 32px));margin:32px auto 60px}.portal-layout{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:18px;align-items:start}.portal-content{min-width:0}
+    .intro-card{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:24px;align-items:center;padding:30px;border:1px solid var(--p-line);border-radius:22px;background:linear-gradient(135deg,rgba(14,35,58,.98),rgba(7,24,40,.94));box-shadow:0 24px 65px rgba(0,0,0,.18)}
+    .intro-copy .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--p-gold);font-size:.78rem;font-weight:900}.intro-copy .eyebrow:before{content:"";width:24px;height:2px;background:var(--p-gold)}.intro-copy h1{margin:10px 0 7px;font-size:clamp(2rem,4.2vw,3.65rem);line-height:1.18;letter-spacing:-.045em}.intro-copy h1 span{display:block;color:var(--p-blue)}.intro-copy p{max-width:720px;margin:0;color:#b8c7d6;font-size:.87rem}
+    .portal-status-card{display:flex;align-items:center;gap:14px;min-height:118px;padding:18px;border:1px solid rgba(147,168,189,.22);border-radius:16px;background:rgba(5,17,29,.52)}.portal-status-card .status-card__icon{display:grid;place-items:center;flex:0 0 44px;height:44px;border-radius:13px;background:rgba(232,180,62,.1);color:var(--p-gold);font-size:1.15rem;font-weight:900}.portal-status-card small,.portal-status-card strong,.portal-status-card p{display:block}.portal-status-card small{color:var(--p-muted);font-size:.71rem}.portal-status-card strong{margin:3px 0;font-size:1rem}.portal-status-card p{margin:0;color:var(--p-muted);font-size:.72rem;line-height:1.55}.portal-status-card.is-open{border-color:rgba(43,211,158,.36)}.portal-status-card.is-open .status-card__icon{color:var(--p-green);background:rgba(43,211,158,.12)}.portal-status-card.is-closed{border-color:rgba(255,111,116,.28)}.portal-status-card.is-closed .status-card__icon{color:var(--p-red);background:rgba(255,111,116,.1)}.portal-status-card.is-checking .status-card__icon{animation:pulse 1.2s infinite}@keyframes pulse{50%{opacity:.4}}
+    .progress-rail{position:sticky;top:98px;padding:16px 10px;border:1px solid rgba(147,168,189,.16);border-radius:20px;background:rgba(9,27,45,.86);box-shadow:0 18px 40px rgba(0,0,0,.14)}.progress-step{position:relative;display:grid;justify-items:center;gap:7px;padding:7px 2px 24px;color:var(--p-muted);text-align:center;font-size:.68rem;font-weight:800;line-height:1.45}.progress-step:not(:last-child):after{content:"";position:absolute;bottom:2px;width:1px;height:18px;background:linear-gradient(var(--p-line),rgba(32,59,88,.15))}.progress-step b{display:grid;place-items:center;width:35px;height:35px;border:1px solid #36516d;border-radius:50%;color:#cad5df;background:#0a1a2b;font-size:.8rem}.progress-step.is-active{color:var(--p-blue-soft)}.progress-step.is-active b{border-color:var(--p-blue);background:var(--p-blue);color:#fff;box-shadow:0 0 0 6px rgba(52,120,246,.1)}
+    .closed-panel{margin-top:16px;padding:18px;border:1px solid rgba(255,111,116,.28);border-radius:15px;background:rgba(255,111,116,.07);text-align:center}.closed-panel strong{display:block}.closed-panel p{margin:3px 0 0;color:var(--p-muted);font-size:.78rem}
+    .application-form{display:grid;gap:14px;margin-top:16px}.portal-panel,.submit-section{padding:22px;border:1px solid var(--p-line);border-radius:18px;background:linear-gradient(180deg,rgba(12,31,51,.97),rgba(8,24,41,.97));box-shadow:0 16px 40px rgba(0,0,0,.1)}
+    .panel-heading{display:flex;align-items:center;gap:12px;margin-bottom:16px;padding-bottom:13px;border-bottom:1px solid rgba(147,168,189,.15)}.panel-icon{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:11px;background:rgba(52,120,246,.14);color:var(--p-blue-soft)}.panel-icon svg{width:21px;height:21px}.panel-heading h2,.panel-heading p{margin:0}.panel-heading h2{font-size:1.13rem}.panel-heading p{color:var(--p-muted);font-size:.73rem}
+    .basic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.field,.question-row{display:block;padding:12px;border:1px solid rgba(147,168,189,.12);border-radius:12px;background:rgba(5,17,29,.34)}.field>span,.question-row>span{display:block;margin-bottom:6px;color:#edf3f9;font-size:.8rem;font-weight:800;line-height:1.55}.field small{display:block;margin-top:5px;color:var(--p-muted);font-size:.65rem}.field--wide{grid-column:1/-1;margin-top:11px}
+    .application-redesign input,.application-redesign select,.application-redesign textarea{width:100%;border:1px solid #294764;border-radius:10px;outline:0;background:var(--p-panel-2);color:#fff;font:inherit;transition:border-color .18s,box-shadow .18s,background .18s}.application-redesign input,.application-redesign select{min-height:45px;padding:0 12px}.application-redesign textarea{min-height:74px;padding:10px 12px;resize:vertical;line-height:1.55}.application-redesign input:focus,.application-redesign select:focus,.application-redesign textarea:focus{border-color:var(--p-blue);background:#122c49;box-shadow:0 0 0 3px rgba(52,120,246,.12)}.application-redesign input::placeholder,.application-redesign textarea::placeholder{color:#698198}
+    .questions-list{display:grid;gap:9px}.question-row{padding:11px 12px}.question-row textarea{min-height:68px}.question-row select{min-height:44px}
+    .submit-section{padding:18px 22px}.declaration{display:flex;align-items:flex-start;justify-content:center;gap:9px;margin:0 0 13px;color:#d7e0e9;font-size:.8rem;text-align:start}.declaration input{flex:0 0 18px;width:18px;min-height:18px;margin-top:2px;accent-color:var(--p-blue)}.primary-button{display:block;min-width:min(100%,290px);min-height:47px;margin:auto;padding:0 22px;border:0;border-radius:11px;background:linear-gradient(135deg,#3478f6,#2866df);color:#fff;cursor:pointer;font-weight:900;box-shadow:0 12px 28px rgba(52,120,246,.22)}.primary-button:hover:not(:disabled){transform:translateY(-1px)}.primary-button:disabled{cursor:not-allowed;opacity:.55}.form-status{max-width:700px;margin:0 auto 12px;padding:10px 13px;border-radius:10px;background:rgba(43,211,158,.09);color:var(--p-green);font-size:.78rem}.form-status.is-error{background:rgba(255,111,116,.09);color:var(--p-red)}
+    .success-panel{margin-top:16px;padding:24px;border:1px solid rgba(43,211,158,.3);border-radius:18px;background:rgba(43,211,158,.07);text-align:center}.success-panel h2,.success-panel p{margin:5px}.success-panel p{color:var(--p-muted)}.success-panel strong{display:inline-block;margin-top:10px;padding:9px 13px;border:1px dashed rgba(43,211,158,.4);border-radius:9px;color:var(--p-green)}
+    .portal-footer{width:min(1220px,calc(100% - 32px));margin:0 auto;padding:22px 0 30px;border-top:1px solid rgba(147,168,189,.14);display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--p-muted);font-size:.74rem}.footer-brand{display:flex;align-items:center;gap:10px}.footer-brand img{width:42px;height:42px;object-fit:contain}.footer-brand strong{display:block;color:#fff}.portal-footer a{color:var(--p-blue-soft);text-decoration:none}
+    @media(max-width:900px){.portal-header__inner{min-height:68px}.portal-nav{display:none}.manager-chip{margin-inline-start:auto}.portal-layout{grid-template-columns:1fr}.progress-rail{position:static;grid-row:1;display:grid;grid-template-columns:repeat(3,1fr);padding:10px}.progress-step{padding:5px;display:flex;align-items:center;justify-content:center;gap:7px}.progress-step:not(:last-child):after{display:none}.progress-step b{width:30px;height:30px}.intro-card{grid-template-columns:1fr;padding:22px}.portal-status-card{min-height:auto}.basic-grid{grid-template-columns:1fr}.field--wide{margin-top:0}}
+    @media(max-width:560px){.portal-header__inner{width:min(100% - 20px,1220px)}.portal-brand strong{font-size:.85rem}.portal-brand small,.manager-chip{display:none}.portal-logo{width:46px;height:46px}.portal-shell{width:min(100% - 20px,1220px);margin-top:18px}.intro-card{padding:18px 14px}.intro-copy h1{font-size:2rem}.portal-panel,.submit-section{padding:16px 12px}.panel-heading{align-items:flex-start}.question-row textarea{min-height:78px}.portal-footer{width:min(100% - 20px,1220px);align-items:flex-start;flex-direction:column}.primary-button{width:100%}}
   </style>
   <script src="js/config.js?v=20260803-1" defer></script>
-  <script src="js/application.js?v=20260803-2" defer></script>
+  <script src="js/application.js?v=20260803-3" defer></script>
 </head>
-<body>
+<body class="application-redesign">
   <a class="skip-link" href="#main-content">انتقل إلى نموذج التقديم</a>
-  <div class="page-glow page-glow--one" aria-hidden="true"></div>
-  <div class="page-glow page-glow--two" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a class="brand" href="index.html" aria-label="الصفحة الرئيسية">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><path d="M24 4 40 10v12c0 11-6.8 19-16 23-9.2-4-16-12-16-23V10l16-6Z" fill="currentColor" opacity=".15"/><path d="M24 7.5 36.5 12v10c0 8.5-4.9 15.2-12.5 19-7.6-3.8-12.5-10.5-12.5-19V12L24 7.5Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m17.5 24 4.2 4.2 9-10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
-        </span>
+  <header class="portal-header">
+    <div class="portal-header__inner">
+      <a class="portal-brand" href="index.html" aria-label="الصفحة الرئيسية">
+        <img class="portal-logo" src="data:image/webp;base64,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" alt="شعار محافظة الرس">
         <span><strong>إدارة محافظة الرس</strong><small>نظام التقديم الذكي</small></span>
       </a>
-      <nav class="main-nav" aria-label="التنقل الرئيسي">
-        <a href="index.html">الرئيسية</a>
-        <a class="is-active" href="application.html">نموذج التقديم</a>
-        <a href="about.html">معلومات عنا</a>
-      </nav>
+      <nav class="portal-nav" aria-label="التنقل الرئيسي"><a href="index.html">الرئيسية</a><a class="is-active" href="application.html">نموذج التقديم</a><a href="about.html">معلومات عنا</a></nav>
       <span class="manager-chip">مسؤول الإدارة: <strong id="application-manager-name">خيرو بن طيب</strong></span>
     </div>
   </header>
 
-  <main id="main-content" class="page-shell">
-    <section class="hero" aria-labelledby="page-title">
-      <div>
-        <span class="eyebrow">نموذج التقديم الرسمي</span>
-        <h1 id="page-title">طلب الانضمام إلى <span>فريق الإدارة</span></h1>
-        <p>أدخل بياناتك بعناية، وأجب عن الأسئلة بوضوح، ثم راجع طلبك قبل الإرسال.</p>
+  <main id="main-content" class="portal-shell">
+    <div class="portal-layout">
+      <div class="portal-content">
+        <section class="intro-card" aria-labelledby="page-title">
+          <div class="intro-copy"><span class="eyebrow">نموذج التقديم الرسمي</span><h1 id="page-title">طلب الانضمام إلى <span>فريق الإدارة</span></h1><p>أدخل بياناتك بعناية، ثم أجب عن الأسئلة المطلوبة بوضوح قبل إرسال طلبك.</p></div>
+          <aside id="application-status-card" class="portal-status-card status-card is-checking" aria-live="polite" aria-busy="true"><span class="status-card__icon" aria-hidden="true">✓</span><div><small>حالة التقديم</small><strong id="application-status-title">جاري التحقق...</strong><p id="application-status-note">يرجى الانتظار حتى يتم التحقق من حالة التقديم.</p></div></aside>
+        </section>
+
+        <section id="application-closed-panel" class="closed-panel" hidden><strong id="application-closed-title">التقديم مغلق حاليًا</strong><p id="application-closed-message">راجع إعلانات فتح التقديم عبر الديسكورد.</p></section>
+
+        <form id="administration-application-form" class="application-form" novalidate hidden>
+          <section class="portal-panel">
+            <header class="panel-heading"><span class="panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg></span><div><h2>البيانات الأساسية</h2><p>اكتب بياناتك كما تظهر داخل السيرفر والديسكورد.</p></div></header>
+            <div class="basic-grid">
+              <label class="field"><span>الاسم داخل الديسكورد</span><input name="fullName" type="text" maxlength="80" autocomplete="name" placeholder="اكتب اسمك في ديسكورد" required></label>
+              <label class="field"><span>معرف Discord</span><input id="application-discord-id" name="discordId" type="text" maxlength="20" inputmode="numeric" dir="ltr" autocomplete="off" placeholder="829030001466671154" required></label>
+              <label class="field"><span>1. الاسم داخل السيرفر</span><input name="serverName" type="text" maxlength="80" placeholder="اكتب اسمك داخل السيرفر" required></label>
+              <label class="field"><span>2. كم عمرك الحقيقي؟</span><input id="application-age" name="age" type="number" min="21" max="100" inputmode="numeric" placeholder="اكتب عمرك الحقيقي" required><small>عدم الإفصاح عن العمر الحقيقي يؤدي إلى رفض الطلب.</small></label>
+              <label class="field field--wide"><span>هل أنت مستعد لحلف اليمين بعدم تسريب أي معلومات تخص الإدارة أو أسئلة التقديم؟</span><select name="confidentialityPledge" required><option value="">اختر الإجابة</option><option value="نعم، أتعهد بعدم التسريب">نعم، أتعهد بعدم التسريب</option><option value="لا">لا</option></select></label>
+            </div>
+          </section>
+
+          <section class="portal-panel">
+            <header class="panel-heading"><span class="panel-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l3 3v15H6z"/><path d="M15 3v4h4M9 11h6M9 15h6"/></svg></span><div><h2>أسئلة التقديم</h2><p>الإجابات الواقعية والمفصلة تساعد الإدارة في مراجعة طلبك.</p></div></header>
+            <div class="questions-list">
+              <label class="question-row"><span>3. هل لديك خبرات إدارية أو في مجال الدعم والمساعدة؟ اذكرها بالتفصيل.</span><textarea name="experience" maxlength="1500" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>4. كم عدد ساعات تواجدك يوميًا؟</span><textarea name="dailyHours" maxlength="500" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>5. لماذا ترغب بالانضمام إلى فريق الدعم والمساعدة؟</span><textarea name="joinReason" maxlength="1000" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>6. كيف تتعامل مع شخص غاضب أو غير متعاون؟</span><textarea name="angryPersonResponse" maxlength="1000" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>7. ماذا ستفعل إذا طلب منك أحد اللاعبين معلومات سرية تخص الإدارة؟</span><textarea name="secretInfoResponse" maxlength="1000" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>8. كيف تتصرف إذا واجهت مشكلة لا تعرف حلها؟</span><textarea name="unknownProblemResponse" maxlength="1000" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>9. هل سبق وأن تعرضت لعقوبة إدارية؟ إذا نعم، اذكر السبب.</span><textarea name="previousPunishments" maxlength="1000" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>10. هل تستطيع العمل ضمن فريق والالتزام بتعليمات الإدارة؟</span><select name="teamworkCommitment" required><option value="">اختر الإجابة</option><option value="نعم، أستطيع العمل ضمن فريق والالتزام">نعم</option><option value="لا">لا</option></select></label>
+              <label class="question-row"><span>11. كيف تتعامل مع الضغط وكثرة البلاغات؟</span><textarea name="pressureResponse" maxlength="1000" placeholder="اكتب إجابتك هنا..." required></textarea></label>
+              <label class="question-row"><span>12. هل توافق على الالتزام بجميع قوانين الإدارة، وفي حال مخالفتها تتحمل كامل المسؤولية؟</span><select name="rulesAgreement" required><option value="">اختر الإجابة</option><option value="نعم، أوافق وأتحمل كامل المسؤولية">نعم، أوافق</option><option value="لا">لا</option></select></label>
+            </div>
+          </section>
+
+          <section class="submit-section">
+            <label class="declaration"><input name="noBansDeclaration" type="checkbox" value="أقر بعدم وجود سجلات رقابية أو باندات" required><span>أقر بأن جميع بياناتي صحيحة، وأنه لا توجد لدي سجلات رقابية أو باندات.</span></label>
+            <div id="application-form-status" class="form-status" role="status" aria-live="polite" hidden></div>
+            <button id="application-submit-button" class="primary-button" type="submit">إرسال طلب التقديم</button>
+          </section>
+        </form>
+
+        <section id="application-success-panel" class="success-panel" hidden><h2>تم إرسال طلبك</h2><p>احتفظ برقم الطلب التالي لحين مراجعة الإدارة:</p><strong id="application-receipt" dir="ltr"></strong></section>
       </div>
-      <aside id="application-status-card" class="status-card is-checking" aria-live="polite" aria-busy="true">
-        <span class="status-card__icon" aria-hidden="true">✓</span>
-        <div><small>حالة البوابة</small><strong id="application-status-title">جاري التحقق...</strong><p id="application-status-note">يرجى الانتظار حتى يتم التحقق من حالة التقديم.</p></div>
+
+      <aside class="progress-rail" aria-label="مراحل التقديم">
+        <span class="progress-step is-active"><b>1</b>البيانات<br>الأساسية</span>
+        <span class="progress-step"><b>2</b>أسئلة<br>التقديم</span>
+        <span class="progress-step"><b>3</b>المراجعة<br>والإرسال</span>
       </aside>
-    </section>
-
-    <section class="requirements" aria-label="شروط التقديم">
-      <div><span>01</span><p><strong>العمر</strong>أكثر من 20 عامًا</p></div>
-      <div><span>02</span><p><strong>السجل الرقابي</strong>خالي من الباندات</p></div>
-      <div><span>03</span><p><strong>السرية</strong>التعهد بعدم التسريب</p></div>
-    </section>
-
-    <section id="application-closed-panel" class="closed-panel" hidden>
-      <span aria-hidden="true">!</span>
-      <div><strong id="application-closed-title">التقديم مغلق حاليًا</strong><p id="application-closed-message">راجع إعلانات فتح التقديم عبر الديسكورد.</p></div>
-    </section>
-
-    <nav class="application-steps" aria-label="مراحل التقديم">
-      <span class="is-active"><b>1</b>البيانات الأساسية</span>
-      <span><b>2</b>أسئلة التقديم</span>
-      <span><b>3</b>المراجعة والإرسال</span>
-    </nav>
-
-    <form id="administration-application-form" class="application-form" novalidate hidden>
-      <section class="form-section">
-        <header class="section-heading"><span>1</span><div><h2>البيانات الأساسية</h2><p>اكتب بياناتك كما تظهر داخل السيرفر والديسكورد.</p></div></header>
-        <div class="form-grid">
-          <label><span>الاسم داخل الديسكورد</span><input name="fullName" type="text" maxlength="80" autocomplete="name" required></label>
-          <label><span>معرف Discord</span><input id="application-discord-id" name="discordId" type="text" maxlength="20" inputmode="numeric" dir="ltr" autocomplete="off" placeholder="829030001466671154" required></label>
-          <label><span>1. الاسم داخل السيرفر</span><input name="serverName" type="text" maxlength="80" required></label>
-          <label><span>2. كم عمرك الحقيقي؟</span><input id="application-age" name="age" type="number" min="21" max="100" inputmode="numeric" required><small>عدم الإفصاح عن العمر الحقيقي يؤدي إلى رفض الطلب.</small></label>
-        </div>
-        <label><span>هل أنت مستعد لحلف اليمين بعدم تسريب أي معلومات تخص الإدارة أو أسئلة التقديم؟</span><select name="confidentialityPledge" required><option value="">اختر الإجابة</option><option value="نعم، أتعهد بعدم التسريب">نعم، أتعهد بعدم التسريب</option><option value="لا">لا</option></select></label>
-      </section>
-
-      <section class="form-section">
-        <header class="section-heading"><span>2</span><div><h2>أسئلة التقديم</h2><p>الإجابات الواقعية والمفصلة تساعد الإدارة في مراجعة طلبك.</p></div></header>
-        <div class="questions">
-          <label><span>3. هل لديك خبرات إدارية أو في مجال الدعم والمساعدة؟ اذكرها بالتفصيل.</span><textarea name="experience" rows="4" maxlength="1500" required></textarea></label>
-          <label><span>4. كم عدد ساعات تواجدك يوميًا؟</span><textarea name="dailyHours" rows="2" maxlength="500" required></textarea></label>
-          <label><span>5. لماذا ترغب بالانضمام إلى فريق الدعم والمساعدة؟</span><textarea name="joinReason" rows="3" maxlength="1000" required></textarea></label>
-          <label><span>6. كيف تتعامل مع شخص غاضب أو غير متعاون؟</span><textarea name="angryPersonResponse" rows="3" maxlength="1000" required></textarea></label>
-          <label><span>7. ماذا ستفعل إذا طلب منك أحد اللاعبين معلومات سرية تخص الإدارة؟</span><textarea name="secretInfoResponse" rows="3" maxlength="1000" required></textarea></label>
-          <label><span>8. كيف تتصرف إذا واجهت مشكلة لا تعرف حلها؟</span><textarea name="unknownProblemResponse" rows="3" maxlength="1000" required></textarea></label>
-          <label><span>9. هل سبق وأن تعرضت لعقوبة إدارية؟ إذا نعم، اذكر السبب.</span><textarea name="previousPunishments" rows="3" maxlength="1000" required></textarea></label>
-          <label><span>10. هل تستطيع العمل ضمن فريق والالتزام بتعليمات الإدارة؟</span><select name="teamworkCommitment" required><option value="">اختر الإجابة</option><option value="نعم، أستطيع العمل ضمن فريق والالتزام">نعم</option><option value="لا">لا</option></select></label>
-          <label><span>11. كيف تتعامل مع الضغط وكثرة البلاغات؟</span><textarea name="pressureResponse" rows="3" maxlength="1000" required></textarea></label>
-          <label><span>12. هل توافق على الالتزام بجميع قوانين الإدارة، وفي حال مخالفتها تتحمل كامل المسؤولية؟</span><select name="rulesAgreement" required><option value="">اختر الإجابة</option><option value="نعم، أوافق وأتحمل كامل المسؤولية">نعم، أوافق</option><option value="لا">لا</option></select></label>
-        </div>
-      </section>
-
-      <section class="submit-section">
-        <label class="declaration"><input name="noBansDeclaration" type="checkbox" value="أقر بعدم وجود سجلات رقابية أو باندات" required><span>أقر بأن جميع بياناتي صحيحة، وأنه لا توجد لدي سجلات رقابية أو باندات.</span></label>
-        <div id="application-form-status" class="form-status" role="status" aria-live="polite" hidden></div>
-        <button id="application-submit-button" class="primary-button" type="submit">إرسال طلب التقديم</button>
-      </section>
-    </form>
-
-    <section id="application-success-panel" class="success-panel" hidden>
-      <span aria-hidden="true">✓</span><h2>تم إرسال طلبك</h2><p>احتفظ برقم الطلب التالي لحين مراجعة الإدارة:</p><strong id="application-receipt" dir="ltr"></strong>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div><strong>إدارة محافظة الرس</strong><span>جميع الحقوق محفوظة © 2026 — محافظة الرس</span></div>
-    <a href="about.html">معلومات عنا والدعم</a>
-  </footer>
+  <footer class="portal-footer"><div class="footer-brand"><img src="data:image/webp;base64,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" alt=""><span><strong>إدارة محافظة الرس</strong>جميع الحقوق محفوظة © 2026 — محافظة الرس</span></div><a href="about.html">معلومات عنا والدعم</a></footer>
 </body>
 </html>
